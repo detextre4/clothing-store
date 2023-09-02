@@ -22,8 +22,7 @@ import googleMaps from './google-maps'
 import mixins from './mixins-import'
 
 // Services
-import firebaseApi from '@/services/firebase-api'
-import nearApi from '@/services/near-api'
+// import firebaseApi from '@/services/firebase-api'
 
 // Types
 import type { App } from 'vue'
@@ -44,8 +43,7 @@ export function registerPlugins(app: App) {
     .use(store)
 
   // Use services
-  firebaseApi(app)
-  nearApi(app)
+  // firebaseApi(app)
 
   // Use custom plugins
   // loadFonts()

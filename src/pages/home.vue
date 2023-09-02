@@ -22,7 +22,7 @@ import { ref, onMounted } from 'vue';
 const
   { isLogged } = variables,
 
-name = ref("detextre4")
+name = ref("clothing_store")
 
 
 onMounted(() => {

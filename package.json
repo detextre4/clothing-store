@@ -1,5 +1,5 @@
 {
-  "name": "vue3_ts_detextre4",
+  "name": "clothing_store",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
@@ -15,7 +15,6 @@
     "axios": "^1.4.0",
     "firebase": "^10.2.0",
     "moment": "^2.29.4",
-    "near-api-js": "^2.1.4",
     "roboto-fontface": "*",
     "vue": "^3.2.0",
     "vue-axios": "^3.5.2",
@@ -25,7 +24,6 @@
     "vue-toastification": "^2.0.0-rc.5",
     "vue3-apexcharts": "^1.4.4",
     "vue3-google-map": "^0.17.0",
-    "vue3-recaptcha2": "^1.8.0",
     "vue3-storage-secure": "^0.1.1",
     "vuefire": "^3.1.15",
     "vuetify": "^3.0.0",

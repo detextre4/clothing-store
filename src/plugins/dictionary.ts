@@ -1,8 +1,8 @@
 export const APP_NAMES = {
-  camelcase: 'vue3TsDetextre4',
-  kedabcase: 'vue3-ts-detextre4',
-  snakecase: 'vue3_ts_detextre4',
-  capitalize: 'Vue3 TS Detextre4',
+  camelcase: 'clothingStore',
+  kedabcase: 'clothing-store',
+  snakecase: 'clothing_store',
+  capitalize: 'Clothing Store',
   values: () => Object.values(APP_NAMES),
 }
 export type APP_NAMES_TYPE = keyof typeof APP_NAMES

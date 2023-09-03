@@ -12,11 +12,10 @@
 </template>
 
 <style scoped lang="scss">
-@use '@/assets/styles/utils/helper-classes.scss';
-@use '@/assets/styles/utils/variables.scss' as vars;
+@use '@/assets/styles/main.scss' as *;
 
 #footer {
-  transition: 0.5s vars.$ease-return;
+  transition: 0.5s $ease-return;
   @extend .margin-global;
 
   &__wrapper {

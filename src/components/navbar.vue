@@ -7,11 +7,10 @@
 </template>
 
 <style scoped lang="scss">
-@use '@/assets/styles/utils/helper-classes.scss';
-@use '@/assets/styles/utils/variables.scss' as vars;
+@use '@/assets/styles/main.scss' as *;
 
 #navbar {
-  animation: movedown .5s vars.$ease-return;
+  animation: movedown .5s $ease-return;
   transition: transform 0.4s ease-in-out;
   @extend .margin-global;
   @extend .full-screen;

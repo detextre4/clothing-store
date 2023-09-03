@@ -1,13 +1,12 @@
 <template>
-  <div id="section-1">
-    <h1>section 1</h1>
-  </div>
+  <full-screen
+    id="section-1"
+    color="green"
+    height="600px"
+    class="flex-center"
+  >
+    <template #content>
+      <h1>section 1</h1>
+    </template>
+  </full-screen>
 </template>
-
-<style scoped lang="scss">
-#section-1 {
-  width: 100%;
-  height: 400px;
-  background-color: green;
-}
-</style>

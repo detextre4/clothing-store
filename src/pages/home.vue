@@ -50,7 +50,7 @@ function handleIntersect(entries: (IntersectionObserverEntry|any)[]) {
 @import '@/assets/styles/main.scss';
 
 #home {
-  @include parent;
+  @extend .parent;
   padding-inline: var(--margin-global);
 }
 </style>

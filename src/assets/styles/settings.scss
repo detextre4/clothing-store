@@ -450,7 +450,7 @@
 //---------------------------------------------------------------------------------------------//
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: calc(var(--h-navbar) + 2em);
+  scroll-padding-top: var(--h-navbar);
 }
 body {
   text-rendering: optimizeLegibility;
@@ -476,24 +476,23 @@ body {
 //---------------------------------------------------------------------------------------------//
 //?======================================== scrollbar =========================================//
 //---------------------------------------------------------------------------------------------//
-@include reducedMotion {
-  ::-webkit-scrollbar {
-    width: var(--w-scroll);
-    height: var(--w-scroll);
-    background: vars.$bg-app;
-    // &:hover {background: $secondary}
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 15px;
-    background: vars.$primary;
-  }
-  body {
-    &::-webkit-scrollbar {
-      width: calc(var(--w-scroll) + 6px);
-      height: calc(var(--w-scroll) + 6px)
-    }
-  }
-}
+// @include reducedMotion {
+//   ::-webkit-scrollbar {
+//     width: var(--w-scroll);
+//     height: var(--w-scroll);
+//     background: vars.$neutral;
+//     // &:hover {background: $secondary}
+//   }
+//   ::-webkit-scrollbar-thumb {
+//     background: vars.$primary;
+//   }
+//   body {
+//     &::-webkit-scrollbar {
+//       width: calc(var(--w-scroll) + 6px);
+//       height: calc(var(--w-scroll) + 6px)
+//     }
+//   }
+// }
 
 
 //---------------------------------------------------------------------------------------------//

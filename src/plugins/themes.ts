@@ -12,18 +12,6 @@ const defaultColors = {
 const light = {
   dark: false,
   colors: {
-    'background-app': '#f9fafa',
-    background: '#FFFFFF',
-    surface: '#FFFFFF',
-    foreground: '#000000',
-    label: '#6e6e6e',
-
-    primary: '#e15517',
-    'primary-darken-1': '#3700B3',
-    secondary: '#02a6d0',
-    'secondary-darken-1': '#018786',
-    accent: '#162c59',
-
     ...defaultColors,
   },
 }
@@ -31,6 +19,20 @@ const light = {
 const dark = {
   dark: true,
   colors: {
+    'background-app': '#e0eaeb',
+    background: '#D3D3D3',
+    surface: '#D3D3D3',
+    foreground: '#FFFFFF',
+    label: '#6e6e6e',
+    primary: '#702f3b',
+    'primary-variant': '#2828be',
+    secondary: '#b7dae0',
+    tertiary: '#333333',
+    accent: '#000000',
+    'accent-variant': '#FFFFFF',
+    neutral: '#D3D3D3',
+    'neutral-variant': '#8B4513',
+
     ...defaultColors,
   },
 }

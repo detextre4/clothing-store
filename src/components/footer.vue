@@ -2,8 +2,7 @@
   <v-footer
     id="footer"
     app absolute
-    color="red"
-    class="flex-center"
+    class="flex-center bg-accent"
   >
     <div id="footer__wrapper">
       <h6 class="text-center">footer</h6>

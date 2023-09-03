@@ -13,9 +13,9 @@ button:not(.not_typography, .not) {
 }
 h1:not(.not_typography, .not) {
   font-family: var(--font-1);
-  font-weight: var(--fw, 400);
+  font-weight: var(--fw, 700);
   font-size: var(--fs, max(16px, 4em));
-  letter-spacing: var(--ls, 0.625em);
+  letter-spacing: var(--ls, .7ch);
   line-height: var(--lh, 1);
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: var(--mb, 16px);

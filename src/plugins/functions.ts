@@ -1,9 +1,28 @@
 import store from '@/store'
 
+export function createObserver({ options, targets, handle }:
+  {
+      options?: IntersectionObserverInit | undefined,
+      targets: HTMLElement|HTMLElement[],
+      handle: IntersectionObserverCallback,
+  }): IntersectionObserver {
+  options ??= {
+    root: null,
+    rootMargin: "0px",
+    threshold: buildThresholdList(),
+  };
+
+  const observer = new IntersectionObserver(handle, options);
+  if (!Array.isArray(targets)) observer.observe(targets);
+  else for (const el of targets) { observer.observe(el) }
+
+  return observer
+}
+
 /// Useful to set intersection threshold
 export function buildThresholdList(): number[] {
   const thresholds = [];
-  const numSteps = 20;
+  const numSteps = 40;
 
   for (let i = 1.0; i <= numSteps; i++) {
     const ratio = i / numSteps;

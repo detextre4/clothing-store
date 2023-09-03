@@ -14,5 +14,7 @@
   @include parent;
   padding-inline: var(--margin-global);
   height: var(--h-navbar);
+  position: sticky;
+  top: 0;
 }
 </style>

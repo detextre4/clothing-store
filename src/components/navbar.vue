@@ -1,18 +1,18 @@
 <template>
   <nav id="navbar" class="flex-center">
     <div id="navbar__wrapper" class="d-flex" style="gap: 20px;">
-      <div class="d-flex flex-center flex-grow-0" style="gap: 10px;">
+      <a  href="#hero" class="d-flex flex-center flex-grow-0" style="gap: 10px;">
         <v-img-load
           :src="logo"
           alt="logo"
           sizes="70"
           rounded="50%"
           cover
-          style="background-color: #fff;"
+          bg-color="#fff"
         />
 
         <h2 class="font-2 text-white mb-0 wbold">Rabbit</h2>
-      </div>
+      </a>
 
       <div
         class="d-flex flex-center flex-grow-1"
@@ -35,12 +35,12 @@ import logo from '@/assets/sources/logos/logo.svg'
 
 const sections = [
   {
-    name: "Section one",
-    to: "#section-1",
+    name: "Productos",
+    to: "#section-2",
   },
   {
-    name: "Section two",
-    to: "#section-2",
+    name: "Ubicación",
+    to: "#section-3",
   },
   {
     name: "Contacto",
@@ -53,6 +53,9 @@ const sections = [
 @use '@/assets/styles/main.scss' as *;
 
 #navbar {
+  position: fixed;
+  top: 0;
+  z-index: 999;
   animation: movedown .5s $ease-return;
   transition:
     transform 0.4s ease-in-out,
@@ -64,6 +67,7 @@ const sections = [
   $border: 40px;
   border-bottom-left-radius: $border;
   border-bottom-right-radius: $border;
+  box-shadow: 0px 2px 6px 2px hsla(0 0% 0% / 0.4);
   
 
   &__wrapper {

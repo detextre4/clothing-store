@@ -3,7 +3,7 @@ import store from '@/store'
 export function createObserver({ options, targets, handle }:
   {
       options?: IntersectionObserverInit | undefined,
-      targets: HTMLElement|HTMLElement[],
+      targets: HTMLElement|HTMLElement[]|NodeListOf<Element>,
       handle: IntersectionObserverCallback,
   }): IntersectionObserver {
   options ??= {
@@ -13,8 +13,8 @@ export function createObserver({ options, targets, handle }:
   };
 
   const observer = new IntersectionObserver(handle, options);
-  if (!Array.isArray(targets)) observer.observe(targets);
-  else for (const el of targets) { observer.observe(el) }
+  if (targets instanceof HTMLElement) observer.observe(targets);
+  else targets.forEach(el => observer.observe(el))
 
   return observer
 }

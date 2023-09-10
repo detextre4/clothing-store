@@ -39,10 +39,6 @@ const sections = [
     to: "#section-2",
   },
   {
-    name: "Ubicación",
-    to: "#section-3",
-  },
-  {
     name: "Contacto",
     to: "#footer",
   },

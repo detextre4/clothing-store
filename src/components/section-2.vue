@@ -1,103 +1,111 @@
 <template>
-  <full-screen>
-    <v-slide-group id="section-2" v-model="slide" mandatory center-active>
-      <v-slide-group-item v-for="item in images" :key="item" v-slot="{ isSelected, toggle }">
-        <v-img-load
-          :src="item"
-          width="980"
-          cover
-          rounded="2px"
-          :class="{ active: isSelected }"
-          @click="toggle"
-        ></v-img-load>
-      </v-slide-group-item>
-    </v-slide-group>
+  <full-screen
+    id="section-2"
+    class="flex-center bg-secondary"
+    content-class="flex-column w-100 parent margin-global"
+    content-style="margin-block: 40px"
+  >
+    <aside class="card-1 d-flex flex-acenter">
+      <img :src="image1" alt="image">
+      <h5>Diseños personalizdos</h5>
+    </aside>
+
+    <aside class="card-1 d-flex flex-acenter-jend">
+      <h5>Variedad de estilos</h5>
+      <img :src="image2" alt="image">
+    </aside>
+
+    <aside class="card-1 d-flex flex-acenter">
+      <img :src="image3" alt="image">
+      <h5>Calidad garantizada</h5>
+    </aside>
+
+    <aside class="card-1 d-flex flex-acenter-jend">
+      <h5>Envío rápido y seguro</h5>
+      <img :src="image4" alt="image">
+    </aside>
   </full-screen>
 </template>
 
 <script setup lang="ts">
-import image1 from '@/assets/sources/images/image-1.jpeg'
-import image2 from '@/assets/sources/images/image-2.jpeg'
-import image3 from '@/assets/sources/images/image-3.jpeg'
-import image4 from '@/assets/sources/images/image-4.jpeg'
-import image5 from '@/assets/sources/images/image-5.jpeg'
-import image6 from '@/assets/sources/images/image-6.jpeg'
-import image7 from '@/assets/sources/images/image-7.jpeg'
-import image8 from '@/assets/sources/images/image-8.jpeg'
-import image9 from '@/assets/sources/images/image-9.jpeg'
-import image10 from '@/assets/sources/images/image-10.jpeg'
-import image11 from '@/assets/sources/images/image-11.jpeg'
-import image12 from '@/assets/sources/images/image-12.jpeg'
-import image13 from '@/assets/sources/images/image-13.jpeg'
-import image14 from '@/assets/sources/images/image-14.jpeg'
-import image15 from '@/assets/sources/images/image-15.jpeg'
-import image16 from '@/assets/sources/images/image-16.jpeg'
-import image17 from '@/assets/sources/images/image-17.jpeg'
-import { ref } from 'vue'
+import image1 from '@/assets/sources/animated/image-6.svg'
+import image2 from '@/assets/sources/animated/image-9.svg'
+import image3 from '@/assets/sources/animated/image-11.svg'
+import image4 from '@/assets/sources/animated/image-10.svg'
+import { onMounted } from 'vue'
+import { createObserver } from '@/plugins/functions'
 
-const
-slide = ref(0),
-images = [
-  image1,
-  image2,
-  image3,
-  image4,
-  image5,
-  image6,
-  image7,
-  image8,
-  image9,
-  image10,
-  image11,
-  image12,
-  image13,
-  image14,
-  image15,
-  image16,
-  image17,
-]
+
+onMounted(() => {
+  const targets = document.querySelectorAll('#section-2 aside')!
+
+  createObserver({
+    targets: targets,
+    handle: (entries) => {
+      for (var entry of entries) {
+        const elements = entry.target.querySelectorAll('*')
+
+        //<!--? set opacity
+        // @ts-ignore
+        elements.forEach(e => e.style.opacity = entry.intersectionRatio)
+
+        //<!--? set translate
+        // @ts-ignore
+        const index = Array.from(entry.target.parentNode!.children).indexOf(entry.target),
+        val = (1 - entry.intersectionRatio) * 10
+
+        if (index % 2 === 0) {
+          // @ts-ignore
+          elements.forEach(e => e.style.transform = `translateX(${val * -1}px)`)
+        } else {
+          // @ts-ignore
+          elements.forEach(e => e.style.transform = `translateX(${val}px)`)
+        }
+      }
+    }
+  })
+})
 </script>
 
 <style lang="scss">
 @use '@/assets/styles/main.scss' as *;
 
 #section-2 {
-  width: 100%;
-  height: 600px;
-  background-color: $tertiary;
+  position: relative;
+  $size: 80px;
+  padding-block: 60px;
 
+  aside {
+    isolation: isolate;
+    position: relative;
+    flex-grow: 0;
+    max-width: max-content;
+    gap: 10px;
+    
+    * { transition: .4s ease }
 
-  .v-slide-group__prev,
-  .v-slide-group__next { display: none }
+    &:nth-child(2n) { margin-left: auto }
 
-
-  .v-img-load {
-    opacity: .5;
-
-    &:not(:first-child, :last-child) { margin-inline: 10px }
-
-    &.active { opacity: 1 }
-  }
-
-
-  /* .v-progress-linear {
-    &__determinate {
-      background-color: $primary;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 50px -50px;
+      background-color: $tertiary;
+      border-radius: 50px;
+      z-index: -1;
     }
   }
 
-  .v-responsive__content > * {
-    margin-inline: auto;
+  h5 {
+    font-family: var(--font-2);
+    --fw: bold;
+    --fs: 40px;
+    color: $foreground;
+    margin-bottom: 0;
   }
 
-  .v-window__controls .v-btn {
-    width: 185px;
-    height: 100% !important;
-    border-radius: 0 !important;
-    background-color: transparent !important;
-    // box-shadow: none !important;
-
-    > * { display: none !important }
-  } */
+  img {
+    width: 300px;
+  }
 }
 </style>

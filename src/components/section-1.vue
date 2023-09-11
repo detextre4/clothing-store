@@ -4,7 +4,7 @@
       <v-slide-group-item v-for="item in images" :key="item" v-slot="{ isSelected, toggle }">
         <v-img-load
           :src="item"
-          width="980"
+          width="70vw"
           cover
           rounded="8px"
           :class="{ active: isSelected }"

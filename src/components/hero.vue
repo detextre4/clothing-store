@@ -56,6 +56,8 @@ import image2 from '@/assets/sources/animated/image-2.svg'
 import image3 from '@/assets/sources/animated/image-3.svg'
 import { createObserver } from '@/plugins/functions';
 import { onMounted } from 'vue'
+import { useDisplay } from 'vuetify/lib/framework.mjs';
+const { mobile } = useDisplay()
 
 onMounted(() => {
   const target = document.getElementById('hero')!,
@@ -69,7 +71,13 @@ onMounted(() => {
       for (var entry of entries) {
          const val = (1 - entry.intersectionRatio) * 450;
 
-        image3!.style.transform = `translateX(${val * -1}px)`
+        if (mobile) {
+          image3!.style.transform = `translateY(${val}px)`
+          image3!.style.opacity = entry.intersectionRatio.toString()
+        } else {
+          image3!.style.transform = `translateX(${val * -1}px)`
+        }
+
         imgInside.forEach((e) => {
           // @ts-ignore
           e!.style.transform = `translateX(${val}px)`
@@ -83,23 +91,39 @@ onMounted(() => {
 <style lang="scss">
 @use '@/assets/styles/main.scss' as *;
 
+$image-size: 21.25em;
+
 #hero {
   isolation: isolate;
-  height: calc(100vh - var(--h-navbar));
-  min-height: 800px;
-  max-height: 878px;
+  // height: calc(100vh - var(--h-navbar));
+  // min-height: 800px;
+  // max-height: 878px;
+  height: 800px;
   gap: 40px;
-  $image-size: 340px;
+  padding-top: calc(var(--h-navbar) + 20px);
+  padding-bottom: 20px;
   z-index: 2;
-
-  p {
-    --fs: 18px;
+  @include media(max, small) {
+    height: auto;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: clamp(9px, 1vw, 14px);
   }
+
+
+  p { --fs: 18px }
 
 
   #image3 {
     width: $image-size / 1.5;
     transition: .1s ease;
+  }
+
+
+  aside {
+    @include media(max, small) { flex-grow: 0 !important }
   }
 
 
@@ -111,6 +135,7 @@ onMounted(() => {
     right: -50px;
     perspective: 500px;
     $bottom: 70px;
+    @include media(max, small) { display: none }
 
     * { transition: .1s ease }
 

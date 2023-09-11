@@ -1,11 +1,11 @@
 <template>
   <nav id="navbar" class="flex-center">
-    <div id="navbar__wrapper" class="d-flex" style="gap: 20px;">
+    <div id="navbar__wrapper" class="d-flex" style="gap: 2.5em;">
       <a  href="#hero" class="d-flex flex-center flex-grow-0" style="gap: 10px;">
         <v-img-load
           :src="logo"
           alt="logo"
-          sizes="70"
+          sizes="4.375em"
           rounded="50%"
           cover
           bg-color="#fff"
@@ -16,14 +16,14 @@
 
       <div
         class="d-flex flex-center flex-grow-1"
-        style="gap: 20px; margin-right: 200px;"
+        style="gap: 2em; margin-right: 200px;"
       >
         <a
           v-for="(item, i) in sections"
           :key="i"
           :href="item.to"
           class="text-foreground"
-          style="--fs: 18.5px"
+          style="--fs: max(16px, 1.35em)"
         >{{ item.name }}</a>
       </div>
     </div>
@@ -64,6 +64,7 @@ const sections = [
   border-bottom-left-radius: $border;
   border-bottom-right-radius: $border;
   box-shadow: 0px 2px 6px 2px hsla(0 0% 0% / 0.4);
+  font-size: clamp(2px, 1vw, 14px);
   
 
   &__wrapper {

@@ -57,7 +57,7 @@ import image3 from '@/assets/sources/animated/image-3.svg'
 import { createObserver } from '@/plugins/functions';
 import { onMounted } from 'vue'
 import { useDisplay } from 'vuetify/lib/framework.mjs';
-const { mobile } = useDisplay()
+const { width } = useDisplay()
 
 onMounted(() => {
   const target = document.getElementById('hero')!,
@@ -71,7 +71,7 @@ onMounted(() => {
       for (var entry of entries) {
          const val = (1 - entry.intersectionRatio) * 450;
 
-        if (mobile) {
+        if (width.value <= 880) {
           image3!.style.transform = `translateY(${val}px)`
           image3!.style.opacity = entry.intersectionRatio.toString()
         } else {

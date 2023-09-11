@@ -2,7 +2,7 @@
   <full-screen
     id="section-2"
     class="flex-center bg-secondary"
-    content-class="d-flex flex-column w-100 parent margin-global"
+    content-class="d-flex flex-column w-100 parent"
     content-style="margin-block: 40px"
   >
     <aside class="card-1 d-flex flex-center">
@@ -70,12 +70,17 @@ onMounted(() => {
 <style lang="scss">
 @use '@/assets/styles/main.scss' as *;
 
+
 #section-2 {
+  --size-bg: 50px;
+
   position: relative;
   $size: 80px;
   padding-block: 60px;
 
   .full-screen__wrapper {
+    padding-inline: calc(var(--margin-global) + var(--size-bg));
+
     @include media(max, x-small) { gap: 100px }
   }
 
@@ -98,12 +103,12 @@ onMounted(() => {
     &::before {
       content: "";
       position: absolute;
-      inset: 50px -50px;
+      inset: var(--size-bg) calc(var(--size-bg) * -1);
       background-color: $tertiary;
       border-radius: 50px;
       z-index: -1;
       
-      @include media(max, x-small) { inset: -20px -50px }
+      @include media(max, x-small) { inset: -20px calc(var(--size-bg) * -1) }
     }
   }
 

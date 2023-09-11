@@ -68,7 +68,6 @@ onMounted(() => {
 @use '@/assets/styles/main.scss' as *;
 
 #section-1 {
-  width: 100%;
   height: 750px;
   @include media(max, small) { height: 650px }
 

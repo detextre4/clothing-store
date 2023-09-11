@@ -92,6 +92,7 @@ onMounted(() => {
 @use '@/assets/styles/main.scss' as *;
 
 $image-size: 21.25em;
+$padding-bottom: 20px;
 
 #hero {
   isolation: isolate;
@@ -101,7 +102,7 @@ $image-size: 21.25em;
   height: 800px;
   gap: 40px;
   padding-top: calc(var(--h-navbar) + 20px);
-  padding-bottom: 20px;
+  padding-bottom: $padding-bottom;
   z-index: 2;
   @include media(max, small) {
     height: auto;
@@ -160,7 +161,7 @@ $image-size: 21.25em;
     &::after {
       content: "";
       position: absolute;
-      bottom: 0;
+      bottom: -$padding-bottom;
       right: calc(var(--margin-global) * -1);
       background-color: $tertiary;
       width: calc($image-size * 1.6);

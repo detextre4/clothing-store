@@ -117,7 +117,7 @@ $image-size: 21.25em;
 
 
   #image3 {
-    width: $image-size / 1.5;
+    width: calc($image-size / 1.5);
     transition: .1s ease;
   }
 

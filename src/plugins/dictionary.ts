@@ -1,8 +1,8 @@
 export const APP_NAMES = {
-  camelcase: 'clothingStore',
-  kedabcase: 'clothing-store',
-  snakecase: 'clothing_store',
-  capitalize: 'Clothing Store',
+  camelcase: 'rabbit',
+  kedabcase: 'rabbit',
+  snakecase: 'rabbit',
+  capitalize: 'Rabbit',
   values: () => Object.values(APP_NAMES),
 }
 export type APP_NAMES_TYPE = keyof typeof APP_NAMES

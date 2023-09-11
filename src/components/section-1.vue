@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import image1 from '@/assets/sources/images/image-1.jpeg'
 import image2 from '@/assets/sources/images/image-2.jpeg'
-import image3 from '@/assets/sources/images/image-3.jpeg'
+import image3 from '@/assets/sources/images/image-3.jpg'
 import image4 from '@/assets/sources/images/image-4.jpeg'
 import image5 from '@/assets/sources/images/image-5.jpeg'
 import image6 from '@/assets/sources/images/image-6.jpeg'

@@ -33,6 +33,19 @@ import image14 from '@/assets/sources/images/image-14.jpeg'
 import image15 from '@/assets/sources/images/image-15.jpeg'
 import image16 from '@/assets/sources/images/image-16.jpeg'
 import image17 from '@/assets/sources/images/image-17.jpeg'
+import image18 from '@/assets/sources/images/image-18.jpeg'
+import image19 from '@/assets/sources/images/image-19.jpeg'
+import image20 from '@/assets/sources/images/image-20.jpeg'
+import image21 from '@/assets/sources/images/image-21.jpeg'
+import image22 from '@/assets/sources/images/image-22.jpeg'
+import image23 from '@/assets/sources/images/image-23.jpeg'
+import image24 from '@/assets/sources/images/image-24.jpeg'
+import image25 from '@/assets/sources/images/image-25.jpeg'
+import image26 from '@/assets/sources/images/image-26.jpeg'
+import image27 from '@/assets/sources/images/image-27.jpeg'
+import image28 from '@/assets/sources/images/image-28.jpeg'
+import image29 from '@/assets/sources/images/image-29.jpeg'
+import image30 from '@/assets/sources/images/image-30.jpeg'
 import { ref, onMounted, onUnmounted } from 'vue'
 
 const
@@ -55,6 +68,19 @@ images = [
   image15,
   image16,
   image17,
+  image18,
+  image19,
+  image20,
+  image21,
+  image22,
+  image23,
+  image24,
+  image25,
+  image26,
+  image27,
+  image28,
+  image29,
+  image30,
 ]
 
 
@@ -69,7 +95,7 @@ onMounted(() => {
 
 #section-1 {
   height: 750px;
-  @include media(max, small) { height: 650px }
+  @include media(max, small) { height: 500px }
 
 
   .v-slide-group__prev,
@@ -78,6 +104,10 @@ onMounted(() => {
 
   .v-img-load {
     opacity: .5;
+
+    // img {
+    //   object-fit: contain !important;
+    // }
 
     &:not(:first-child, :last-child) { margin-inline: 10px }
 

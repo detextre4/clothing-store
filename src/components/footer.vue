@@ -25,7 +25,7 @@
             <v-icon :icon="item.icon" size="28" />
           </v-btn>
 
-          <span>{{ item.text }}</span>
+          <a :href="item.href" target="_blank" class="text-white">{{ item.text }}</a>
         </div>
       </aside>
     </div>

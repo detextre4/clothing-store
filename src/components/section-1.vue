@@ -1,7 +1,10 @@
 <template>
-  <full-screen content-class="pa-4 bg-tertiary">
+  <full-screen content-class="py-4 bg-tertiary">
     <v-slide-group id="section-1" v-model="slide" mandatory center-active>
-      <v-slide-group-item v-for="item in images" :key="item" v-slot="{ isSelected, toggle }">
+      <v-slide-group-item
+        v-for="item in images" :key="item"
+        v-slot="{ isSelected, toggle }"
+      >
         <v-img-load
           :src="item"
           width="70vw"
@@ -117,8 +120,11 @@ onMounted(() => {
   @include media(max, small) { height: 500px }
 
 
-  .v-slide-group__prev,
-  .v-slide-group__next { display: none }
+  .v-slide-group {
+    &__prev, &__next { display: none }
+
+    &__content { padding-inline: 16px }
+  }
 
 
   .v-img-load {

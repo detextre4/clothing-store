@@ -81,11 +81,30 @@ images = [
   image28,
   image29,
   image30,
-]
+],
+
+currentTranslate = ref('')
 
 
 onMounted(() => {
-  const interval = setInterval(() => slide.value = (slide.value + 1) % images.length, 5000)
+  const startInterval = () => setInterval(() => slide.value = (slide.value + 1) % images.length, 5000)
+  let interval = startInterval()
+
+  const slideGroup = document.getElementById('section-1')?.querySelector('.v-slide-group__content')
+  
+  slideGroup?.addEventListener('touchstart', (event: any) => {
+    clearInterval(interval);
+    currentTranslate.value = event.currentTarget.style.transform
+  })
+
+  slideGroup?.addEventListener('touchend', (event: any) => {
+    interval = startInterval()
+    event.currentTarget.style.transform = currentTranslate.value
+  })
+
+  slideGroup?.addEventListener('touchmove', (event: any) =>
+    event.currentTarget.style.transform = currentTranslate.value)
+
   onUnmounted(() => clearInterval(interval));
 });
 </script>

@@ -1,0 +1,1 @@
+import{_ as a}from"./_plugin-vue_export-helper-c27b6911.js";import{V as r,a as _}from"./VMain-56dc38ca.js";import{r as s,D as n,E as t,o as c,b as e}from"./index-2ae14748.js";const u={};function i(l,p){const o=s("router-view");return c(),n(r,{id:"auth-layout"},{default:t(()=>[e(_,null,{default:t(()=>[e(o)]),_:1})]),_:1})}const h=a(u,[["render",i]]);export{h as default};

@@ -80,27 +80,6 @@
 //---------------------------------------------------------------------------------------------//
 //?========== utility classes ==========//
 //---------------------------------------------------------------------------------------------//
-[c-font] {
-  text-decoration: var(--under, initial);
-  font-size: var(--fs, 16px);
-  letter-spacing: var(--ls, normal);
-  line-height: var(--lh, 1);
-}
-[c-box] {
-  width: var(--w, auto);
-  max-width: var(--max-w, auto);
-  min-width: var(--min-w, auto);
-  height: var(--h, auto);
-  max-height: var(--max-h, auto);
-  min-height: var(--min-h, auto);
-  padding: var(--p, initial);
-  margin: var(--m, initial);
-  box-shadow: var(--bs, initial);
-  border: var(--b, initial);
-  border-radius: var(--br, initial);
-  background: var(--bg, initial);
-}
-
 .font-resizer {font-size: var(--resizer)}
 .font-1 {font-family:var(--font-1)}
 .font-2 {font-family:var(--font-2)}
